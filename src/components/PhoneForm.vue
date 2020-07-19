@@ -4,13 +4,14 @@
         <el-input  v-model="phone"
     class="search-input phone-input">
     </el-input>
-       <el-button  icon="el-icon-check" @click="onClick"
+       <el-button  icon="el-icon-check"
       class="phone-btn"></el-button>
       </div>
     <span class="info"> вкажіть телефон отримувача чи відправника для дод. інформації</span>
   </div>
 </template>
 <script>
+
 export default {
   name: 'Phoneform',
   data: () => ({

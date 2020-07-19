@@ -1,23 +1,34 @@
 <template>
  <div>
+   <div class="title-wrap">
+<span>Трек посылок <strong>NovayaPoshta</strong></span>
+   </div>
     <Form />
   <PackageInfo />
+  <History />
  </div>
 </template>
 
 <script>
 import Form from '@/components/Form.vue';
 import PackageInfo from '@/components/PackageInfo.vue';
+import History from '@/components/History.vue';
 
 export default {
   name: 'App',
-  components: { Form, PackageInfo },
+  components: { Form, PackageInfo, History },
 };
 </script>
 
 <style>
 body {
   width: 400px;
-  height: 400px;
+  background-image: url('../assets/bg.png');
+}
+.title-wrap {
+  display: flex;
+  justify-content: center;
+}
+span {
 }
 </style>

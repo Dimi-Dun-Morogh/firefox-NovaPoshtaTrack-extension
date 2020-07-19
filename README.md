@@ -1,24 +1,5 @@
-# novaposhta-browser-ext
+Firefox browser extension that allows to track your NovaPoshta packages.
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+main view
+![alt text](https://imageup.ru/img282/3632559/ss1.png)
+![alt text](https://imageup.ru/img202/3632564/ss2.png)

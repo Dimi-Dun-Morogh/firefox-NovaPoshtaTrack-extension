@@ -15,8 +15,6 @@ import {
   Input,
   Dialog,
   Icon,
-  Collapse,
-  CollapseItem,
 } from 'element-ui';
 
 const elements = [Button,
@@ -29,9 +27,6 @@ const elements = [Button,
   Input,
   Dialog,
   Icon,
-  Collapse,
-  CollapseItem,
-
 ];
 
 // configure language
