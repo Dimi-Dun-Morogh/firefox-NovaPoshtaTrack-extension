@@ -1,7 +1,7 @@
 <template>
  <div>
    <div class="title-wrap">
-<span>Трек посылок <strong>NovayaPoshta</strong></span>
+<span>Трек посылок <strong>NovaPoshta</strong></span>
    </div>
     <Form />
   <PackageInfo />

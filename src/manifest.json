@@ -4,16 +4,15 @@
   "description": "Track your novaposhta packages",
   "default_locale": "en",
   "icons": {
-    "16": "icons/16.jpg",
-    "48": "icons/48.jpg",
-    "128": "icons/128.jpg"
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
   },
   "browser_action": {
     "default_popup": "popup.html",
     "default_title": "NovaPoshtaTrack",
     "default_icon": {
-      "19": "icons/19.jpg",
-      "38": "icons/38.jpg"
+      "19": "icons/19.png",
+      "38": "icons/38.png"
     }
-  }
-}
+  }}
