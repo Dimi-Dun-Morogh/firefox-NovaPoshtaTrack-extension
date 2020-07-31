@@ -1,6 +1,9 @@
 {
   "extName": {
-    "message": "novaposhta-browser-ext",
+    "message": "NovaPoshta tracking",
     "description": ""
+  },
+  "appDesc": {
+    "message": "Track your novaposhta packages"
   }
 }
