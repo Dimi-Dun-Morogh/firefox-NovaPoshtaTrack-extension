@@ -5,3 +5,7 @@ https://chrome.google.com/webstore/detail/novaposhta-track/dlkjflpmejaehpobbokpg
 ##### main view
 ![alt text](https://imageup.ru/img282/3632559/ss1.png)
 ![alt text](https://imageup.ru/img202/3632564/ss2.png)
+
+#####todo:
+- [ ] - добавить фетч детальной инфы по номеру телефона
+- [ ] - сделать локализации интерфейса
