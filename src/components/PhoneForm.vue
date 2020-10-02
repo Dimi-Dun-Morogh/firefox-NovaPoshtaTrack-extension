@@ -1,28 +1,46 @@
 <template>
   <div>
     <div class="wrap-phone">
-        <el-input  v-model="phone"
-    class="search-input phone-input">
+        <el-input  v-model="phoneNumb"
+        size="mini"
+    class="search-input phone-input"
+    @keydown.enter="getDetailedInfo">
+    <el-button slot="append" icon="el-icon-arrow-right
+" @click="getDetailedInfo"
+     class="phoneBtn"></el-button>
     </el-input>
-       <el-button  icon="el-icon-check"
-      class="phone-btn"></el-button>
       </div>
     <span class="info"> вкажіть телефон отримувача чи відправника для дод. інформації</span>
   </div>
 </template>
 <script>
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'Phoneform',
   data: () => ({
-    phone: '+380',
+    phoneNumb: '',
   }),
+  computed: {
+    ...mapGetters(['lastInput', 'phone']),
+  },
+  mounted() {
+    this.phoneNumb = this.phone;
+  },
+  methods: {
+    ...mapActions(['getPackageData']),
+    getDetailedInfo() {
+      console.log(this.phoneNumb);
+      this.getPackageData({ id: this.lastInput, Phone: this.phoneNumb });
+    },
+  },
 };
 </script>
 <style scoped>
 .wrap-phone {
   display: flex;
 align-items: end;
+width: 325px;
 }
 .phone-input {
   width: 55%;
@@ -33,20 +51,11 @@ align-items: end;
   border-radius: 0px;
 border-right: 0px;
 }
-.phone-btn {
-  height: 30px;
-  position: relative;
-    background-color: #e02f2f;
-    color:#ffff;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+.phoneBtn  {
+  font-size: 18px !important;
+  color: red !important;
 }
-.phone-btn >>> .el-icon-check {
-  position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
-}
+
 .phone-input  >>> .el-input__inner:focus {
      border-color: rgba(226, 10, 10, 0.1) !important;
     outline: 0;

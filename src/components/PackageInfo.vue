@@ -12,6 +12,18 @@
       <li>{{packageData.ActualDeliveryDate}}</li>
     </ul>
     <PhoneForm  v-show="showPhone" />
+    <ul v-show="showDetailed">
+      <li class="info">Ім'я отримувича</li>
+      <li>Васильєв Дмитро В'ячеславович</li>
+      <li class="info">телефон отримувича</li>
+      <li>+380631143857</li>
+      <li class="info">Ім'я відправника</li>
+      <li>Домбровський Володимир Олександрович</li>
+      <li class="info">телефон відправника</li>
+      <li>+380631143857</li>
+      <li class="info">опис пакування</li>
+      <li>комп'ютерні комплектуючі</li>
+    </ul>
   </div>
 </template>
 <script>
@@ -22,10 +34,10 @@ export default {
   name: 'PackageInfo',
   components: { PhoneForm },
   data: () => ({
-    showPhone: false,
+    showPhone: true,
   }),
   computed: {
-    ...mapGetters(['packageData']),
+    ...mapGetters(['packageData', 'showDetailed']),
   },
 };
 </script>

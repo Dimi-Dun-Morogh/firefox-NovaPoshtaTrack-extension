@@ -15,6 +15,7 @@ import {
   Input,
   Dialog,
   Icon,
+
 } from 'element-ui';
 
 const elements = [Button,
@@ -27,6 +28,7 @@ const elements = [Button,
   Input,
   Dialog,
   Icon,
+
 ];
 
 // configure language

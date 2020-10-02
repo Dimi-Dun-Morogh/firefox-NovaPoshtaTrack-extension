@@ -21,7 +21,7 @@ export default {
   methods: {
     ...mapActions(['getPackageData']),
     onClick(item) {
-      this.getPackageData(item);
+      this.getPackageData({ id: item });
     },
   },
 };

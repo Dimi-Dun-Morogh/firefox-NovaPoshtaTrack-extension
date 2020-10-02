@@ -31,7 +31,7 @@ export default {
           message: 'введите 14 символов, только цифры',
         });
       } else {
-        this.getPackageData(this.input);
+        this.getPackageData({ id: this.input });
       }
     },
     updateInput() {

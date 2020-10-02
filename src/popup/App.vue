@@ -1,5 +1,6 @@
 <template>
  <div>
+   <Notifications />
    <div class="title-wrap">
 <span>Трек посылок <strong>NovaPoshta</strong></span>
    </div>
@@ -13,10 +14,13 @@
 import Form from '@/components/Form.vue';
 import PackageInfo from '@/components/PackageInfo.vue';
 import History from '@/components/History.vue';
+import Notifications from '@/components/Notifications.vue';
 
 export default {
   name: 'App',
-  components: { Form, PackageInfo, History },
+  components: {
+    Form, PackageInfo, History, Notifications,
+  },
 };
 </script>
 
@@ -28,7 +32,5 @@ body {
 .title-wrap {
   display: flex;
   justify-content: center;
-}
-span {
 }
 </style>
