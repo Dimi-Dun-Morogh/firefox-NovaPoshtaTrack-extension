@@ -1,6 +1,6 @@
 <template>
   <div class="wrap-history" v-show="history.length">
-    <span>Предыдущие запросы:</span>
+    <span>{{historyText}}:</span>
     <ul>
       <li v-for="(item,index) in history" :key="index"
       @click="onClick(item)"
@@ -15,6 +15,7 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'History',
+  props: ['historyText'],
   computed: {
     ...mapGetters(['history']),
   },

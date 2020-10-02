@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <el-input placeholder="Введите  номер ТТН" v-model="input" class="search-input" >
+    <el-input :placeholder="placeholder" v-model="input" class="search-input" >
       <el-button slot="append" icon="el-icon-search"
       @click="onClick" class="custom-btn"></el-button>
     </el-input>
@@ -12,6 +12,7 @@ import { Notification } from 'element-ui';
 
 export default {
   name: 'Form',
+  props: ['placeholder'],
   data: () => ({
     input: '',
   }),

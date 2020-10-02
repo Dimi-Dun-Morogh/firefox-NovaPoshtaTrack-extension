@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import mutations from './mutations';
 import notificationStore from './notifications';
+import localizationStore from './localization';
 
 Vue.use(Vuex);
 //! записать номер телефона в локал сторейдж
@@ -65,7 +66,8 @@ const store = new Vuex.Store({
         commit(mutations.PACKAGE_DATA, data.data[0]);
         dispatch('updateHistory', { id, Phone });
         commit(mutations.MODIFY_INPUT, id);
-        commit(mutations.SHOW_DETAILED, data.data[0].PhoneSender !== undefined);
+        commit(mutations.SHOW_DETAILED, data.data[0].PhoneSender !== undefined
+           || data.data[0].PhoneRecipient !== undefined);
         if (data.warnings.length && Phone) dispatch('showError', data.warnings);
       } catch (error) {
         console.log(error);
@@ -79,15 +81,20 @@ const store = new Vuex.Store({
       localStorage.setItem('NposhtaSeachHistory', JSON.stringify(this.state.history));
       if (Phone) localStorage.setItem('NpostaPhone', JSON.stringify(Phone));
     },
-    initHistory({ commit }) {
+    initHistory({ commit, dispatch }) {
       const history = JSON.parse(localStorage.getItem('NposhtaSeachHistory'));
       const phone = JSON.parse(localStorage.getItem('NpostaPhone'));
+      const selectedLang = JSON.parse(localStorage.getItem('novaPoshtaLang'));
       if (history == null) return;
       if (history.length) {
         commit(mutations.HISTORY_DATA_REPLACE, history);
       }
       if (phone !== null) {
         commit(mutations.SET_PHONE, phone);
+      }
+      if (selectedLang !== null) {
+        console.log(selectedLang);
+        dispatch('localizationStore/setLanguage', selectedLang, { root: true });
       }
     },
     showError({ dispatch }, errorsArray) {
@@ -103,7 +110,7 @@ const store = new Vuex.Store({
       );
     },
   },
-  modules: { notificationStore },
+  modules: { notificationStore, localizationStore },
 });
 store.dispatch('initHistory');
 export default store;

@@ -10,7 +10,7 @@
      class="phoneBtn"></el-button>
     </el-input>
       </div>
-    <span class="info"> вкажіть телефон отримувача чи відправника для дод. інформації</span>
+    <span class="info"> {{phoneNum}}</span>
   </div>
 </template>
 <script>
@@ -18,6 +18,7 @@ import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'Phoneform',
+  props: ['phoneNum'],
   data: () => ({
     phoneNumb: '',
   }),
